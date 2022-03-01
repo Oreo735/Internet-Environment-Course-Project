@@ -31,7 +31,7 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  res.send("Hii");
+  res.send("Hiii");
 });
 
 app.listen(3000, () => {
