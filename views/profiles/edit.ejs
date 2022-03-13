@@ -1,0 +1,50 @@
+<% layout('layouts/boilerplate')%>
+
+<div class="row justify-content-center">
+  <h1 class="text-center">Edit Profile</h1>
+  <div class="d-flex flex-column align-items-center">
+    <form
+      action="/profile/<%=user._id%>?_method=PUT"
+      method="POST"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="form-outline mb-4">
+        <label class="form-label" for="image">Choose a Profile Picture</label>
+        <br />
+        <input type="file" name="image" id="image" />
+      </div>
+      <div class="form-outline mb-4">
+        <label class="form-label" for="username">Username</label>
+
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="form-control form-control-lg"
+          value="<%=user.username%>"
+        />
+      </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label" for="bio">Bio</label>
+        <textarea
+          class="form-control form-control-lg"
+          id="bio"
+          rows="4"
+          style="resize: none"
+          placeholder="Tell others about yourself..."
+          value="<%=user.bio%>"
+          name="bio"
+        ></textarea>
+      </div>
+
+      <div class="mb-3">
+        <button class="btn btn-info">Update Profile</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<% layout('layouts/boilerplate')%>
